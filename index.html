@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clove Dental</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden { display: none; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      animation: marquee 25s linear infinite;
+    }
+  
+  </style>
+</head>
+<body class="flex flex-col">
+
+
+  <!-- Appointment -->
+ <div id="appointment" class="flex flex-col items-center justify-center min-h-screen bg-[#f8f8f8] px-4 py-10 hidden">
+  <h2 class="text-2xl font-semibold mb-6 text-[#432210]">Book Appointment</h2>
+
+  <form id="appointmentForm" class="w-full max-w-md bg-white shadow-md rounded px-6 py-8 space-y-4">
+    <input
+      type="text"
+      name="name"
+      placeholder="Full Name"
+      class="w-full border border-gray-300 rounded px-3 py-2"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      class="w-full border border-gray-300 rounded px-3 py-2"
+      required
+    />
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone Number"
+      class="w-full border border-gray-300 rounded px-3 py-2"
+      required
+    />
+    <input
+      type="date"
+      name="date"
+      class="w-full border border-gray-300 rounded px-3 py-2"
+      required
+    />
+
+    <button
+      type="submit"
+      class="w-full bg-[#432210] text-white py-2 rounded hover:bg-[#5a2e16]"
+    >
+      Confirm Appointment
+    </button>
+  </form>
+
+  <button
+    onclick="navigateTo('home')"
+    class="mt-6 text-sm text-[#432210] underline"
+  >
+    ← Back to Home
+  </button>
+</div>
+
+  <!-- Navbar -->
+<div class="flex justify-center items-center md:h-[70px] w-[1440px] px-4 h-[80px] bg-[#fffaf5]">
+  <div class="flex items-center w-full max-w-[1320px] h-[38px] top-4 left-[60px] justify-between">
+    
+    <!-- Logo -->
+    <div class="md:w-[94px] md:h-[38px]">
+      <img src="assets/logo.png" alt="logo" class="md:w-32 md:h-[52px] md:top-[-7px] md:left-[-17px] w-[101px] h-[41px] top-[19px] left-[16px]" />
+    </div>
+
+    <!-- Right Side: Book + Call -->
+    <div class="flex h-[38px] items-center gap-3">
+      
+      <!-- Book Appointment Button -->
+      <div class="hidden md:flex cursor-pointer items-center w-[200px] h-[38px] rounded-[50px] border pt-2 pr-3 pb-2 pl-3 gap-3 bg-[#f8943f] border-[#de6f0d]" onclick="navigateTo('book')">
+        <span class="w-[19px] h-[21px]">
+          <img src="assets/appointment.png" alt="" />
+        </span>
+        <p class="text-white font-semibold text-[16px]">Book Appointment</p>
+      </div>
+
+      <!-- Call Info -->
+      <div class="cursor-pointer flex items-center w-[154px] h-[38px] top-[21px] left-[220px] bg-[#ffffff] rounded-[70px] border border-[#462512] pt-2 pr-3 pb-2 pl-3 gap-3">
+        <span class="w-[12px] h-[21px]">
+          <img src="assets/call.png" alt="" />
+        </span>
+        <p class="font-semibold text-[16px]">985-6589-510</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Hero + Body Section (homePage) -->
+  <div id="hero">
+    <!-- Hero Section -->
+  <div class="w-[967px] h-[450px] top-[0px] relative">
+
+  <!-- Background -->
+  <div class="relative w-[390px] h-[394px] md:w-[967px] md:h-[450px] bg-[#ffffff] md:bg-[#d0d0d0]">
+    <img src="assets/stoma.png" alt="lab" class="h-[417px] md:h-[450px] md:w-[967px] blur-[4px] md:blur-[6px]" />
+    
+    <div class="absolute w-[216px] h-[280px] top-[114px] left-[190px] md:w-[314px] md:h-[406px] z-20 md:top-[44px] md:left-[468px]">
+      <img src="assets/doc.png" alt="" />
+    </div>
+
+    <div class="absolute w-[390px] h-[205px] top-[66px] pt-5 pr-4 pb-5 pl-4 gap-6 bg-[#fff]/50 md:bg-none md:bg-gradient-to-r from-white/50 to-white/50 md:w-[644px] md:h-[153px] md:top-[149px] md:pt-6 md:pr-[60px] md:pb-6 md:pl-[60px] md:gap-5 backdrop-blur-[15px] flex flex-col">
+
+      <div class="w-[426px] h-[47px] gap-2 flex flex-col">
+        <p class="hidden md:block w-fit h-[18px] text-[#303030] font-extrabold text-[16px]">Painless Rootcanal treatment in Delhi</p>
+        <p class="md:hidden leading-[110%] font-extrabold text-[16px] h-[47px]">Your Smile <br /> Our Priority At <br /><span class="text-[#f8943f]"> Clove Dental</span></p>
+        <p class="font-semibold leading-[130%] text-[16px] md:w-[426px] w-[226px] text-[#525252] md:text-[#4e4e4e]">
+          Expert RCT, Zero Pain, <br class="md:hidden" /> Right Here in Delhi
+        </p>
+      </div>
+
+      <div class="absolute md:static flex cursor-pointer items-center w-fit h-[38px] rounded-[50px] border pt-2 pr-6 md:pr-3 pb-2 pl-6 md:pl-3 gap-5 md:gap-3 top-[140px] left-3 bg-[#f8943f] border-[#de6f0d]" onclick="navigateTo('book')">
+        <span class="w-[19px] h-[21px]">
+          <img src="assets/appointment.png" alt="" />
+        </span>
+        <p class="text-white font-semibold text-[16px]">Book Appointment</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Form Section (Desktop) -->
+  <div class="absolute bg-[#fff9f4] w-[473px] h-[450px] top-[0px] left-[967px] border pt-6 pr-[40px] pl-[40px] pb-6 gap-[20px] border-[#ffe0c4] flex-col hidden md:flex">
+    <div class="w-[393px] h-[76px] gap-2 flex flex-col">
+      <p class="h-[26px] font-bold text-[20px] text-[#303030]">Get Expert Dental Guidance in Delhi</p>
+      <p class="font-normal text-[#474747] leading-[130%] text-[16px] h-[42px]">Book your free consultation today and take the first step towards healthy, beautiful teeth.</p>
+    </div>
+
+    <form onsubmit="return handleFormSubmit(event)" class="w-[393px] py-4 h-64 flex flex-col gap-5">
+      <div class="h-[146px] gap-4 flex flex-col">
+        <input name="name" type="text" placeholder="Name" class="w-[393px] h-[38px] rounded-[24px] border border-[#ffe0c4] px-4 bg-[#ffffff]" />
+        <input name="phone" type="tel" placeholder="Mobile Number" class="w-[393px] h-[38px] rounded-[24px] border border-[#ffe0c4] px-4 bg-[#ffffff]" />
+        <div class="flex">
+          <input name="captcha" type="text" placeholder="Captcha" class="w-[283px] h-[38px] rounded-l-[24px] border border-[#ffe0c4] px-4 bg-[#ffffff]" />
+          <div class="h-[38px] w-[110px] rounded-r-[24px] bg-[#462512] flex items-center justify-center text-white text-[14px]">1514</div>
+        </div>
+      </div>
+      <div class="w-[393px] h-[32px] gap-2 flex items-center">
+        <input name="agree" type="checkbox" />
+        <p class="text-[12px] leading-[130%] text-[#303030]">
+          I agree to CLOVE Dental's Terms and Privacy Policy and consent to contact via phone, email or sms
+        </p>
+      </div>
+      <button type="submit" class="my-4 flex items-center justify-center w-[393px] h-[38px] rounded-[24px] bg-[#f58420]">
+        <p class="font-semibold text-white text-[14px] leading-[100%] h-[38px] flex items-center">Book a Free Consultation</p>
+      </button>
+    </form>
+  </div>
+
+  <!-- Marquee Section -->
+  <div class="w-[390px] md:w-[1440px] h-[60px] bg-[#fff9f4] flex items-center justify-center overflow-hidden relative">
+    <div class="w-full animate-marquee flex gap-20">
+      <!-- Repeating images -->
+      <img src="assets/Pointer01.png" class="h-[38.28px]" />
+      <img src="assets/Pointer02.png" class="h-[38.28px]" />
+      <img src="assets/Pointer03.png" class="h-[38.28px]" />
+      <img src="assets/Pointer04.png" class="h-[38.28px]" />
+      <img src="assets/Pointer05.png" class="h-[38.28px]" />
+      <img src="assets/Pointer06.png" class="h-[38.28px]" />
+      <img src="assets/Pointer07.png" class="h-[38.28px]" />
+      <img src="assets/Pointer08.png" class="h-[38.28px]" />
+      <!-- Repeated for loop simulation -->
+      <img src="assets/Pointer01.png" class="h-[38.28px]" />
+      <img src="assets/Pointer02.png" class="h-[38.28px]" />
+      <img src="assets/Pointer03.png" class="h-[38.28px]" />
+      <img src="assets/Pointer04.png" class="h-[38.28px]" />
+      <img src="assets/Pointer05.png" class="h-[38.28px]" />
+      <img src="assets/Pointer06.png" class="h-[38.28px]" />
+      <img src="assets/Pointer07.png" class="h-[38.28px]" />
+      <img src="assets/Pointer08.png" class="h-[38.28px]" />
+    </div>
+  </div>
+</div>
+  </div>
+
+<!-- ================= BODY COMPONENT START ================= -->
+ <div class="body"></div>
+<div class="w-full max-w-[1440px] mx-auto bg-white py-6 md:py-20 px-4 md:px-10">
+
+  <!-- Mobile Form -->
+  <div class="flex justify-center md:hidden bg-white">
+    <div class="w-[358px] bg-[#fff9f4] border border-[#ffe0c4] p-5 rounded-[20px]">
+      <p class="font-bold text-[18px] text-[#303030] mb-2">Get Expert Dental Guidance in Delhi</p>
+      <p class="text-[#474747] text-sm mb-4">Book your free consultation today and take the first step towards healthy, beautiful teeth.</p>
+      <form id="mobileForm" class="space-y-4">
+        <input name="name" type="text" placeholder="Name" class="w-full h-[38px] rounded-[24px] border border-[#ffe0c4] px-4 bg-white" />
+        <input name="phone" type="tel" placeholder="Mobile Number" class="w-full h-[38px] rounded-[24px] border border-[#ffe0c4] px-4 bg-white" />
+        <div class="flex">
+          <input name="captcha" type="text" placeholder="Captcha" class="w-[70%] h-[38px] rounded-l-[24px] border border-[#ffe0c4] px-4 bg-white" />
+          <div class="w-[30%] h-[38px] bg-[#462512] text-white rounded-r-[24px] flex items-center justify-center text-sm">1514</div>
+        </div>
+        <div class="flex items-start gap-2 text-xs text-[#303030]">
+          <input name="agree" type="checkbox" />
+          <p>I agree to CLOVE Dental's Terms and Privacy Policy and consent to contact via phone, email or sms.</p>
+        </div>
+        <button type="submit" class="w-full h-[38px] bg-[#f58420] text-white font-semibold rounded-[24px]">Book a Free Consultation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Treatments Section -->
+  <div class="treatment text-center p-3 md:max-w-[1320px] w-full">
+    <h2 class="text-2xl font-bold text-[#1a1a1a] leading-[130%] hidden md:block">Types of Root Canal Treatments</h2>
+    <h2 class="text-2xl font-bold text-[#1a1a1a] leading-[130%] md:hidden">Types of Dental Implants</h2>
+    <p class="text-xl text-[#474747] w-full md:w-[880px] mx-auto hidden md:block">In a root canal, the dentist removes infected pulp, cleans the tooth, and fills it with special material.</p>
+    <p class="text-xl text-[#474747] w-full max-w-[358px] mx-auto md:hidden">The Surgeon inserts an implant into the jawbone which acts as an anchor for an artificial tooth, called a crown</p>
+
+    <!-- Cards -->
+    <div class="flex md:w-fit overflow-x-auto md:justify-between py-6 gap-6">
+      <!-- Card 1 -->
+      <div class="flex flex-col md:flex-row w-[285px] h-fit md:w-[640px] rounded-[20px] border border-[#ffe0c4]">
+        <img src="assets/tooth1.png" alt="Root Canal Treatment" class="md:w-[320px] md:h-[332px] w-[285px] h-[285px] rounded-t-[20px] md:rounded-tl-[20px] md:rounded-bl-[20px] md:rounded-tr-none object-cover" />
+        <div class="w-full md:w-[320px] p-5 text-left">
+          <h3 class="font-bold text-[16px] md:text-[20px]">Root Canal Treatment</h3>
+          <p class="py-[5px] text-[14px]">Ideal for infected or damaged tooth</p>
+          <h3 class="font-bold text-[14px] md:text-[16px]">Types of RCT</h3>
+          <ul class="list-disc px-7 text-[14px] md:text-[16px] text-[#474747]">
+            <li>Root Canal treatment</li>
+            <li>Split RCT</li>
+            <li>Split RCT with rubber dam</li>
+            <li>Split RCT with laser</li>
+          </ul>
+          <div class="py-3">
+            <p class="text-[#F58420] font-semibold text-[12px] md:text-[14px]">Starting Price</p>
+            <p class="font-bold text-[16px] md:text-[20px]">₹ 19,999</p>
+          </div>
+          <div class="w-[181px] h-[38px] bg-[#f58420] text-white font-semibold text-[14px] flex items-center justify-center rounded-[50px] cursor-pointer">Get Free Consultation</div>
+        </div>
+      </div>
+
+      <!-- Card 2 (Repeat similarly) -->
+      <div class="flex flex-col md:flex-row w-[285px] h-fit md:w-[640px] rounded-[20px] border border-[#ffe0c4]">
+        <img src="assets/tooth2.png" alt="Re-Root Canal Treatment" class="md:w-[320px] md:h-[332px] w-[285px] h-[285px] rounded-t-[20px] md:rounded-tl-[20px] md:rounded-bl-[20px] md:rounded-tr-none object-cover" />
+        <div class="w-full md:w-[320px] p-5 text-left">
+          <h3 class="font-bold text-[16px] md:text-[20px]">Re-Root Canal Treatment</h3>
+          <p class="py-[5px] text-[14px]">Ideal issues that persist or recur after an initial root canal treatment</p>
+          <h3 class="font-bold text-[14px] md:text-[16px]">Types of RCT</h3>
+          <ul class="list-disc px-7 text-[14px] md:text-[16px] text-[#474747]">
+            <li>Re-RCT with rubber dam</li>
+            <li>Re-RCT laser specialist</li>
+            <li>Re-RCT with retrieval of old RCT filling</li>
+          </ul>
+          <div class="py-3">
+            <p class="text-[#F58420] font-semibold text-[12px] md:text-[14px]">Starting Price</p>
+            <p class="font-bold text-[16px] md:text-[20px]">₹ 19,999</p>
+          </div>
+          <div class="w-[181px] h-[38px] bg-[#f58420] text-white font-semibold text-[14px] flex items-center justify-center rounded-[50px] cursor-pointer">Get Free Consultation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Smiles Section -->
+  <div class="w-full">
+    <div class="text-center px-4">
+      <h2 class="text-[20px] md:text-2xl font-bold text-[#303030] leading-[130%]">Real Smiles, Real Transformations</h2>
+      <p class="text-[16px] md:text-[20px] leading-[130%] text-[#474747]">See the Life changing results our dental implant patients enjoy</p>
+    </div>
+    <div class="flex overflow-x-auto gap-4 md:px-[30px] py-[20px]">
+      <div class="shrink-0 w-[295px]">
+        <img src="assets/patient1.png" class="w-full h-[200px] object-cover" />
+        <div class="flex justify-between mt-2">
+          <p class="text-[16px] font-semibold text-[#1a1a1a]">Arjun Mehta</p>
+          <p class="text-[#f58420] font-semibold text-[14px]">Mumbai</p>
+        </div>
+      </div>
+      <div class="shrink-0 w-[295px]">
+        <img src="assets/patient2.png" class="w-full h-[200px] object-cover" />
+        <div class="flex justify-between mt-2">
+          <p class="text-[16px] font-semibold text-[#1a1a1a]">Kavita Sharma</p>
+          <p class="text-[#f58420] font-semibold text-[14px]">Bangalore</p>
+        </div>
+      </div>
+      <div class="shrink-0 w-[295px]">
+        <img src="assets/patient3.png" class="w-full h-[200px] object-cover" />
+        <div class="flex justify-between mt-2">
+          <p class="text-[16px] font-semibold text-[#1a1a1a]">Neha Joshi</p>
+          <p class="text-[#f58420] font-semibold text-[14px]">Delhi</p>
+        </div>
+      </div>
+      <div class="shrink-0 w-[295px]">
+        <img src="assets/patient4.png" class="w-full h-[200px] object-cover" />
+        <div class="flex justify-between mt-2">
+          <p class="text-[16px] font-semibold text-[#1a1a1a]">Vikram Desai</p>
+          <p class="text-[#f58420] font-semibold text-[14px]">Chennai</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion Section -->
+  <div class="flex flex-col md:w-[1181px] mx-auto my-5">
+  <div class="text-center px-4">
+    <h2 class="font-bold text-[#303030] text-[20px] md:text-[24px]">
+      Why Choose Clove Dental
+    </h2>
+    <p class="text-[16px] md:text-[20px] text-[#474747] py-1">
+      Clove Dental is India's Leading dental care brand with 600+ clinics nationwide
+    </p>
+  </div>
+
+  <!-- Flex container for accordion + image -->
+  <div class="flex flex-col-reverse md:flex-row items-start md:my-10 gap-6">
+    
+    <!-- Accordion Section -->
+    <div class="w-full md:w-[793px] space-y-4">
+      <div>
+        <button onclick="toggleAccordion(0)" class="w-full text-left flex justify-between items-center px-5 py-3 rounded-[10px] text-[#303030] font-semibold text-[16px]">
+          DORI-A.I. enabled Dental chair
+          <span id="toggle-icon-0" class="text-[#f58420] text-xl">+</span>
+        </button>
+        <div id="accordion-content-0" class="accordion-content hidden px-5 pb-3 text-[#474747] text-sm">
+          DORI-A.I. enabled Dental chair
+        </div>
+      </div>
+
+      <div>
+        <button onclick="toggleAccordion(1)" class="w-full text-left flex justify-between items-center px-5 py-3 rounded-[10px] text-[#303030] font-semibold text-[16px]">
+          10x safety and 4 step sterilization process
+          <span id="toggle-icon-1" class="text-[#f58420] text-xl">+</span>
+        </button>
+        <div id="accordion-content-1" class="accordion-content hidden px-5 pb-3 text-[#474747] text-sm">
+          10x safety and 4 step sterilization process
+        </div>
+      </div>
+
+      <div>
+        <button onclick="toggleAccordion(2)" class="w-full text-left flex justify-between items-center px-5 py-3 rounded-[10px] text-[#303030] font-semibold text-[16px]">
+          Experienced and Certified Implantologist
+          <span id="toggle-icon-2" class="text-[#f58420] text-xl">+</span>
+        </button>
+        <div id="accordion-content-2" class="accordion-content hidden px-5 pb-3 text-[#474747] text-sm">
+          Experienced and Certified Implantologist
+        </div>
+      </div>
+
+      <div>
+        <button onclick="toggleAccordion(3)" class="w-full text-left flex justify-between items-center px-5 py-3 rounded-[10px] text-[#303030] font-semibold text-[16px]">
+          Updated with world class equipments
+          <span id="toggle-icon-3" class="text-[#f58420] text-xl">+</span>
+        </button>
+        <div id="accordion-content-3" class="accordion-content hidden px-5 pb-3 text-[#474747] text-sm">
+          Updated with world class equipments
+        </div>
+      </div>
+
+      <div>
+        <button onclick="toggleAccordion(4)" class="w-full text-left flex justify-between items-center px-5 py-3 rounded-[10px] text-[#303030] font-semibold text-[16px]">
+          Regular audits for safety protocols
+          <span id="toggle-icon-4" class="text-[#f58420] text-xl">+</span>
+        </button>
+        <div id="accordion-content-4" class="accordion-content hidden px-5 pb-3 text-[#474747] text-sm">
+          Regular audits for safety protocols
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="w-full md:w-[461px] shrink-0">
+      <img src="assets/image.png" alt="Dental" class="w-full h-auto object-contain" />
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+  <!-- Appointment Section (appointmentPage) -->
+  <div id="appointmentPage" class="hidden">
+    <section class="p-8 bg-gray-100">
+      <h2 class="text-2xl font-semibold mb-4">Appointment Booking</h2>
+      <form class="space-y-4 max-w-md">
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded" />
+        <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded" />
+        <input type="date" class="w-full px-4 py-2 border rounded" />
+        <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded">Submit</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#432210] text-white px-4 py-6 text-sm font-light">
+  <div class="max-w-[1320px] mx-auto flex flex-col gap-4">
+    <!-- Top Section: Logo + Links -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <img src="./assets/logo.png" alt="Clove Logo" class="w-[150px] h-auto" />
+
+      <div class="flex flex-col md:flex-row md:gap-8 gap-2 text-right md:text-left w-full md:w-auto items-end md:items-center">
+        <p class="cursor-pointer">Privacy Policy</p>
+        <p class="cursor-pointer">Terms of service</p>
+        <p class="cursor-pointer">Accessibility</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="border-t border-white w-full md:w-[600px] self-end" />
+
+    <!-- Bottom Text -->
+    <p class="text-xs text-white leading-relaxed text-right md:text-center">
+      All Rights Reserved - 2024, Clove Dental (a brand name of M/s. SStar Dental Centre Private Limited). Managed By Unbundl
+    </p>
+  </div>
+</footer>
+
+
+
+
+
+<script src="index.js"></script>  
+</body>
+</html>
